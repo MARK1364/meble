@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>GREKO MEBLE</title>
+		
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<style>
+			body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+			}
+			
+			nav {
+			background-color: #333;
+			padding: 10px;
+			text-align: center;
+			margin-top: 65px;
+			}
+			
+			nav a {
+			color: #fff;
+			text-decoration: none;
+			margin: 0 10px;
+			transition: color 0.3s ease;
+			}
+			
+			nav a:hover {
+			color: #ff0000;
+			}
+			
+			/* Styl menu rozwijanego */
+			.dropdown {
+			position: relative;
+			display: inline-block;
+			}
+			
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: black;
+			min-width: 160px;
+			min-height: 40px;
+			z-index: 1;
+			}
+			
+			.dropdown-content a {  /* Wyśrodkowanie tekstu wewnątrz linków */
+  display: block;
+  text-align: center; 
+  padding: 10px 0; /* Dodatkowy padding dla równomiernego rozmieszczenia */
+  color: white;
+  text-decoration: none;
+}
+			.dropdown:hover .dropdown-content {
+			display: block;
+			}
+			
+			.main-container {
+            display: flex;
+			flex-wrap: wrap; /* Włącza zawijanie elementów */
+			margin: 20px;
+			}
+			
+			.container {
+            width: 400px;
+            height: 600px;
+            margin: 0 auto;
+            background-color: white; /* Kolor RGB */;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+			margin:12px;
+			}
+			
+			.title {
+            font-size: 32px;
+            color: black;
+			margin: 16px;
+			}
+			
+			.image {
+            width: 400px;
+			}
+			
+			.button-label-group {
+            display: flex;
+			flex-wrap: wrap; /* Włącza zawijanie elementów */
+            justify-content: center;
+            align-items: flex-start;;
+			vertical-align: top;
+            width: 100%;
+            margin-top: 5px;
+			}
+			.button-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+			display: inline-block;
+			margin-top: 2px;
+			
+			}
+			.button {
+			width: 40px;
+			height: 40px;
+			border-radius: 21px;
+			border: 1px solid #000; /* Czarna obwódka */
+			text-align: center;
+			line-height: 40px; /* srodkuje */
+			cursor: pointer;
+			margin: 2px;
+			}
+			
+			.label {
+            text-align: center;
+            width:40px;
+			font-size: 9px;
+            margin-top: 1px;
+			}
+			
+			
+			.circle-label {
+			display: flex;
+			flex-wrap: wrap; /* Włącza zawijanie elementów */
+			
+			align-items: center;
+			width: 100%;
+			bottom: 0; /* Przesuwa .text na sam dół .container */
+			margin-top: 15px;
+			margin-bottom: 5px;
+			font-size: 12px;
+			}
+			
+			
+            color: white; /* Kolor tekstu */
+            font-size: 10px;
+			margin: 1px;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="header-container"></div>
+		<nav>
+			<a href="index.html">Strona główna</a>
+			<a href="Galeria.html">Galeria</a>
+			<div class="dropdown">
+				<a href="#">Wzorniki</a>
+				<div class="dropdown-content">
+					<a href="Fronty.html">Fronty</a>
+					<a href="Plyty.html">Płyty</a>
+					<a href="Uchwyty.html">Uchwyty</a>
+				</div>
+			</div>			
+			<a href="Kontakt.html">Kontakt</a>
+		</nav>
+		
+		<div class="main-container">
+			<div class="container">
+				<div class="title">Easy</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_Ease.JPG" alt="Rejs Easy"/>
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_nikiel_szczotkowany.png');"></div>
+						<div class="label">Aluminium</div>
+					</div>							
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_bialy.png');"></div>
+						<div class="label">Biały</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny.png');"></div>
+						<div class="label">Czarny</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_stal_szczotkowana.png');"></div>
+						<div class="label">Stal szczotkowana</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_grafit.png');"></div>
+						<div class="label">Grafit</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto_szczotkowane.png');"></div>
+						<div class="label">Złoto szczotkowane</div>
+					</div>							
+				</div>	
+				<label class="circle-label">Rozstaw otw: 96/128/160/192/256/320mm</label>
+				
+			</div>
+			
+			<div class="container">
+				<div class="title">Tytano</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_Tytano.JPG" alt="Rejs_Tytano" />
+				<div class="button-label-group">
+					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny.png');"></div>
+						<div class="label">Czarny</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_stal_szczotkowana.png');"></div>
+						<div class="label">Stal szczotkowana</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_grafit.png');"></div>
+						<div class="label">Grafit</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto_szczotkowane.png');"></div>
+						<div class="label">Złoto szczotkowane</div>
+					</div>							
+					
+				</div>
+				
+				<label class="circle-label">Rozstaw otw: 128/160/192/256/320mm</label>
+				
+			</div>
+			
+			<div class="container">
+				<div class="title">Stilo</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_Stilo.JPG" alt="Rejs Stilo" />
+				<div class="button-label-group">
+					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_nikiel_szczotkowany.png');"></div>
+						<div class="label">Aluminium</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_bialy.png');"></div>
+						<div class="label">Biały</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny.png');"></div>
+						<div class="label">Czarny</div>
+					</div>						
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_stal_szczotkowana.png');"></div>
+						<div class="label">Stal szczotkowana</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_tytan.png');"></div>
+						<div class="label">Tytan</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto_szczotkowane.png');"></div>
+						<div class="label">Złoto szczotkowane</div>
+					</div>								
+					
+				</div>
+				<label class="circle-label">Rozstaw otw: 128/256mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">Reling</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_Reling.JPG" alt="Rejs Reling" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom_satyna.png');"></div>
+						<div class="label">Chrom satyna</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>								
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_nikiel_satyna.png');"></div>
+						<div class="label">Nikiel satyna</div>
+					</div>	
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto_szczotkowane.png');"></div>
+						<div class="label">Nikiel szczotkowany</div>	
+					</div>
+					<label class="circle-label">Rozstaw otw: 96/128/160/192/224/256/288/320m</label>
+				</div>
+			</div>
+			<div class="container">
+				<div class="title">Magna</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_Magna.JPG" alt="Rejs Magna" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_nikiel_szczotkowany.png');"></div>
+						<div class="label">Aluminium</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_bialy.png');"></div>
+						<div class="label">Biały</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_miedz.png');"></div>
+						<div class="label">Miedż</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_mosiadz.png');"></div>
+						<div class="label">Mosiądz</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_stal_szczotkowana.png');"></div>
+						<div class="label">Stal szczotkowana</div>
+					</div>					
+				</div>
+				<label class="circle-label">Rozstaw otw: 96/128mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">Aster</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_Aster.JPG" alt="Rejs Aster" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny.png');"></div>
+						<div class="label">Czarny</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_grafit.png');"></div>
+						<div class="label">Grafit</div>
+					</div>		
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_stal_szczotkowana.png');"></div>
+						<div class="label">Stal szczotkowana</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_tytan.png');"></div>
+						<div class="label">Tytan</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto_szczotkowane.png');"></div>
+						<div class="label">Złoto szczotkowane</div>
+					</div>							
+				</div>
+				<label class="circle-label">Rozstaw otw: 96/128/160/192mm</label>
+				
+			</div>
+			
+			<div class="container">
+				<div class="title">Linea</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_Linea.JPG" alt="Rejs Linea" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny.png');"></div>
+						<div class="label">Czarny</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_tytan.png');"></div>
+						<div class="label">Tytan</div>
+					</div>											
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto.jpg');"></div>
+						<div class="label">Złoto</div>
+					</div>	
+				</div>
+				<label class="circle-label">Rozstaw otw: 96/128/160mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">Artesi</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_Artesi.JPG" alt="Rejs Artesi" />
+				<div class="button-label-group">	
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny.png');"></div>
+						<div class="label">Czarny</div>
+					</div>	
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto_szczotkowane.png');"></div>
+						<div class="label">Złoto szczotkowane</div>
+					</div>							
+				</div>
+				<label class="circle-label">Rozstaw otw: 96/128mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">AR05</div>
+				<img class="image" src="images/uchyty_zdjecia/REJS_AR05.JPG" alt="REJS AR05" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>						
+				</div>
+				<label class="circle-label">Rozstaw otw: 96/128/160/192mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title"> AS01</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_AS01.JPG" alt="Rejs AS01" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_bialy.png');"></div>
+						<div class="label">Biały</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_mosiadz.png');"></div>
+						<div class="label">Mosiądz</div>
+					</div>											
+				</div>			
+				<label class="circle-label">Rozstaw otw: 96/128/160/192/320/416</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">AR33</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_AR33.JPG" alt="Rejs AR33" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>						
+				</div>
+				<label class="circle-label">Rozstaw otw: 128mm</label>		
+			</div>
+			
+			<div class="container">
+				<div class="title">AR32</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_AR32.JPG" alt="Rejs AR32" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny.png');"></div>
+						<div class="label">Czarny</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>						
+				</div>
+				<label class="circle-label">Rozstaw otw: 64/96/128mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">AR31</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_AR31.JPG" alt="Rejs AR31" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>					
+				</div>
+				<label class="circle-label">Rozstaw otw: 96/128mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">Artesi G</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_Artesi_G.JPG" alt="Rejs Artesi" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny.png');"></div>
+						<div class="label">Czarny</div>
+					</div>						
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto.jpg');"></div>
+						<div class="label">Złoto</div>
+					</div>	
+				</div>		
+			</div>
+			
+			<div class="container">
+				<div class="title">Niro</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_Niro.JPG" alt="Rejs Niro" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_nikiel_szczotkowany.png');"></div>
+						<div class="label">Aluminium</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_bialy.png');"></div>
+						<div class="label">Biały</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny.png');"></div>
+						<div class="label">Czarny</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_miedz.png');"></div>
+						<div class="label">Miedż</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_mosiadz.png');"></div>
+						<div class="label">Mosiądz</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_stal_szczotkowana.png');"></div>
+						<div class="label">Stal szczotkowana</div>
+					</div>
+				</div>	
+				
+			</div>
+			
+			<div class="container">
+				<div class="title">AR09</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_AR09.JPG" alt="Rejs AR09" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>						
+				</div>						
+			</div>
+			
+			<div class="container">
+				<div class="title">Vito</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_Vito.JPG" alt="Rejs_Vito" />
+				<div class="button-label-group">			
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_nikiel_szczotkowany.png');"></div>
+						<div class="label">Aluminium</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_bialy.png');"></div>
+						<div class="label">Biały</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>						
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_miedz.png');"></div>
+						<div class="label">Miedż</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_mosiadz.png');"></div>
+						<div class="label">Mosiądz</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_stal_szczotkowana.png');"></div>
+						<div class="label">Stal szczotkowana</div>
+					</div>	
+				</div>
+			</div>
+			
+			<div class="container">
+				<div class="title">FE6</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_FE6.JPG" alt="Rejs FE6" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_nikiel_szczotkowany.png');"></div>
+						<div class="label">Aluminium szczotkowane</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_bialy.png');"></div>
+						<div class="label">Biały</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny.png');"></div>
+						<div class="label">Czarny strukturalny</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto.jpg');"></div>
+						<div class="label">Złoto</div>
+					</div>		
+				</div>
+				<label class="circle-label">Rozstaw otw: 96/128/162/320mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">FE6 2R10</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_FE62R10.JPG" alt="Rejs FE6 2R10" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_bialy.png');"></div>
+						<div class="label">Biały</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny strukturalny</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>										
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto.jpg');"></div>
+						<div class="label">Złoto</div>
+					</div>			
+				</div>		
+				<label class="circle-label">Rozstaw otw: 96/128/192/320mm</label>	
+			</div>
+			
+			<div class="container">
+				<div class="title">FE8</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_FE8.JPG" alt="Rejs FE8" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>					
+				</div>		
+				<label class="circle-label">Rozstaw otw: 96/128/192/320</label>	
+			</div>
+			
+			<div class="container">
+				<div class="title">FE9C</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_FE9C.JPG" alt="Rejs FE9C" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_bialy.png');"></div>
+						<div class="label">Biały</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>				
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>						
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto.jpg');"></div>
+						<div class="label">Złoto</div>
+					</div>			
+				</div>
+				<label class="circle-label">Rozstaw otw: 226mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">FE9</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_FE9.JPG" alt="Rejs FE9" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>
+					<label class="circle-label">Rozstaw otw: 128/192mm</label>
+				</div>
+			</div>
+			
+			<div class="container">
+				<div class="title">FE9U</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_FE9U.JPG" alt="Rejs FE9U" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_bialy.png');"></div>
+						<div class="label">Biały</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_chrom.png');"></div>
+						<div class="label">Chrom</div>
+					</div>
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto.jpg');"></div>
+						<div class="label">Złoto</div>
+					</div>	
+				</div>
+				<label class="circle-label">Rozstaw otw: 128mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">RU13I</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_RU13I.JPG" alt="Rejs RU13I" />
+				<div class="button-label-group">	
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>						
+				</div>
+				<label class="circle-label">Rozstaw otw: 128mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">RU13II</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_RU13II.JPG" alt="Rejs RU13II" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>							
+				</div>			
+				<label class="circle-label">Rozstaw otw: 128/256mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">RU9I</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_RU9I.JPG" alt="Rejs RU9I" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_czarny_mat.png');"></div>
+						<div class="label">Czarny mat</div>
+					</div>					
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>									
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_zloto.jpg');"></div>
+						<div class="label">Złoto</div>
+					</div>					
+				</div>
+				<label class="circle-label">Rozstaw otw: 32/64/96/128mm</label>
+			</div>
+			
+			<div class="container">
+				<div class="title">RU10I</div>
+				<img class="image" src="images/uchyty_zdjecia/Rejs_RU10I.JPG" alt="Rejs RU10I" />
+				<div class="button-label-group">
+					<div class="button-label">
+						<div class="button" style="background-image: url('images/uchyty_zdjecia/kolor_aluminium.png');"></div>
+						<div class="label">Naturalny</div>
+					</div>							
+				</div>
+				<label class="circle-label">Rozstaw otw: 160mm</label>
+				
+			</div>
+
+		</div>	
+		
+		<div id="footer-container"></div>
+		<!-- Skrypt do załadowania stopki -->
+		<script>
+			
+			document.addEventListener("DOMContentLoaded", function() {
+				// Pobierz zawartość header.html
+				fetch('header.html')
+				.then(response => response.text())
+				.then(headerHtml => {
+					// Wstaw zawartość header.html do elementu o id "header-container"
+					const headerContainer = document.querySelector('#header-container');
+					headerContainer.innerHTML = headerHtml;
+				});
+				
+				// Pobierz zawartość footer.html
+				fetch('footer.html')
+				.then(response => response.text())
+				.then(footerHtml => {
+					// Wstaw zawartość footer.html do elementu o id "footer-container"
+					const footerContainer = document.querySelector('#footer-container');
+					footerContainer.innerHTML = footerHtml;
+				});
+			});
+			
+			
+			
+		</script>	
+		
+	</body>
+</html>
+

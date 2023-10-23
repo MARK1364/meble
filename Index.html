@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>GREKO MEBLE</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		
+		<style>
+			/* Style CSS dla strony */
+			body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			}	
+			
+			nav {
+			background-color: #333;
+			padding: 10px;
+			text-align: center;
+			margin-top: 65px;
+			}
+			
+			nav a {
+			color: #fff;
+			text-decoration: none;
+			margin: 0 10px;
+			transition: color 0.3s ease;
+			}
+			
+			nav a:hover {
+			color: #ff0000;
+			}
+			
+			/* Styl menu rozwijanego */
+			.dropdown {
+			position: relative;
+			display: inline-block;
+			}
+			
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: black;
+			min-width: 160px;
+			min-height: 40px;
+			z-index: 1;
+			}
+			
+			.dropdown-content a {  /* Wyśrodkowanie tekstu wewnątrz linków */
+  display: block;
+  text-align: center; 
+  padding: 10px 0; /* Dodatkowy padding dla równomiernego rozmieszczenia */
+  color: white;
+  text-decoration: none;
+}
+			
+			.dropdown:hover .dropdown-content {
+			display: block;
+			}
+			
+			/* Dodane style dla podziału strony */
+			.main-container {
+            display: flex;
+			flex-wrap: wrap; /* Włącza zawijanie elementów */
+			margin-top: 150px;
+			margin-bottom:100px;
+			background-color: #e9e9e9;  /*jasno szary  tlo*/
+			min-height: calc(100vh - 160px);
+			}
+			
+			.left-section {
+			width: 40%;
+			color: #000; /* Czarna czcionka */	
+			font-size: 12px;
+			font-family: Arial, sans-serif;
+			
+			}
+			
+			.right-section {
+			width: 60%;
+			}
+			.image-container img {
+			width: 80%;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="header-container"></div>
+		<nav>
+			<a href="index.html">Strona główna</a>
+			<a href="Galeria.html">Galeria</a>
+			<div class="dropdown">
+				<a href="#">Wzorniki</a>
+				<div class="dropdown-content">
+					<a href="Fronty.html">Fronty</a>
+					<a href="Plyty.html">Płyty</a>
+					<a href="Uchwyty.html">Uchwyty</a>
+				</div>
+			</div>			
+			<a href="Kontakt.html">Kontakt</a>
+		</nav>
+		
+		
+		<div class="main-container">
+			<div class="left-section">
+				<section>
+					<h2>Witaj!</h2>
+					<p>Z ponad dwudziestoletnim doświadczeniem w obróbce drewna, jesteśmy dumni, że możemy tworzyć dla Ciebie niepowtarzalne meble na zamówienie. 
+					Nasza pasja do pracy z drewnem przejawia się w każdym detalu, co sprawia, że nasze produkty są wyjątkowe i trwałe..</p>
+					<p>Z przyjemnością przedstawiamy naszą ofertę, która obejmuje tworzenie mebli na zamówienie, projektowanie kuchni na wymiar, produkcję garderób, szaf, oraz mebli łazienkowych. Nasza pasja do drewna i szeroka gama usług pozwalają nam dostosować się do Twoich indywidualnych potrzeb, tworząc unikalne rozwiązania. Współpracujemy z najlepszymi dostawcami, gwarantując materiały najwyższej jakości. Nasza stolarnia to miejsce, gdzie drewno staje się sztuką, a Twoje marzenia o pięknym i funkcjonalnym wnętrzu stają się rzeczywistością. Skontaktuj się z nami i razem zrealizujemy Twój projekt.</p>
+					<p>Jesteśmy dumni z naszej współpracy z najlepszymi dostawcami płyt i akcesoriów. Dzięki temu możemy zapewnić Ci materiały najwyższej jakości, które gwarantują trwałość i doskonały wygląd naszych mebli.  </p>
+					<p>Naszą misją jest dostarczanie wysokiej jakości mebli z drewna, które spełniają Twoje oczekiwania. Jesteśmy Twoim partnerem w procesie projektowania i tworzenia wnętrz, a nasza fachowa wiedza oraz niezbędny sprzęt pozwalają nam osiągnąć doskonałe rezultaty.
+						
+					Zapraszamy Cię do kontaktu z nami, abyśmy mogli poznać Twoje potrzeby i rozpocząć tworzenie mebli, które staną się nieodłączną częścią Twojego domu. Dla nas drewno to nie tylko materiał, to nasza pasja i sztuka.</p>
+					<p>Skontaktuj się z nami już dziś, a pomożemy Ci stworzyć wymarzone wnętrze!</p>
+				</section>
+			</div>
+			<div class="right-section">
+				<div class="image-container">
+					<img src="https://raw.githubusercontent.com/MARK1364/3DD/b3fa6c0025724c78fabb092bf9f5695b4ccf3386/animacja%20v1.68.gif" alt="Animacja">
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<!-- Dodane skrypty -->
+		<div id="footer-container"></div>
+		<!-- Skrypt do załadowania stopki -->
+		<script>
+			
+			document.addEventListener("DOMContentLoaded", function() {
+				// Pobierz zawartość header.html
+				fetch('header.html')
+				.then(response => response.text())
+				.then(headerHtml => {
+					// Wstaw zawartość header.html do elementu o id "header-container"
+					const headerContainer = document.querySelector('#header-container');
+					headerContainer.innerHTML = headerHtml;
+				});
+				
+				
+				// Pobierz zawartość footer.html
+				fetch('footer.html')
+				.then(response => response.text())
+				.then(footerHtml => {
+					// Wstaw zawartość footer.html do elementu o id "footer-container"
+					const footerContainer = document.querySelector('#footer-container');
+					footerContainer.innerHTML = footerHtml;
+				});
+			});
+			
+			
+			
+		</script>	
+		
+		
+	</body>
+</html>

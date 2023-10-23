@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>GREKO MEBLE</title>
+		
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<style>
+			/* Style CSS dla strony */
+			body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			}
+			
+			nav {
+			background-color: #333;
+			padding: 10px;
+			text-align: center;
+			margin-top: 65px;
+			}
+			
+			nav a {
+			color: #fff;
+			text-decoration: none;
+			margin: 0 10px;
+			transition: color 0.3s ease;
+			}
+			
+			nav a:hover {
+			color: #ff0000;
+			}
+			
+			/* Styl menu rozwijanego */
+			.dropdown {
+			position: relative;
+			display: inline-block;
+			}
+			
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: black;
+			min-width: 160px;
+			min-height: 40px;
+			z-index: 1;
+			}
+			
+			.dropdown-content a {  /* Wyśrodkowanie tekstu wewnątrz linków */
+			display: block;
+			text-align: center; 
+			padding: 10px 0; /* Dodatkowy padding dla równomiernego rozmieszczenia */
+			color: white;
+			text-decoration: none;
+			}
+			
+			.dropdown:hover .dropdown-content {
+			display: block;
+			}
+			
+			
+			.main-container {
+			display: flex;
+			flex-direction: column; /* Ustawienie na układ kolumnowy */
+			align-items: center; /* Centralizacja w pionie */
+			text-align: center; /* Centralizacja tekstu */
+			}
+			
+			
+			
+			
+			
+			.left-section, .right-section {
+			width: 100%; /* Szerokość 100% na mniejszych ekranach */
+			margin-bottom:25px;
+			}
+			
+			
+			
+			/* Dodane style dla obrazka */
+			.image-container {
+			display: flex;
+			justify-content: center;
+			margin: 10px;
+			
+			}		
+			#map {
+			height: auto;
+			width: auto;
+			margin: 10px;
+			
+			}
+			
+			#kontakt p .bold-text {
+			font-size: 16px; /* Możesz dostosować rozmiar czcionki według własnych preferencji */
+			font-weight: bold; /* Dodaje pogrubienie */
+			margin:2px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+
+		<div id="header-container"></div>
+		<nav>
+			<a href="index.html">Strona główna</a>
+			<a href="Galeria.html">Galeria</a>
+			<div class="dropdown">
+				<a href="#">Wzorniki</a>
+				<div class="dropdown-content">
+					<a href="Fronty.html">Fronty</a>
+					<a href="Plyty.html">Płyty</a>
+					<a href="Uchwyty.html">Uchwyty</a>
+				</div>
+			</div>			
+			<a href="Kontakt.html">Kontakt</a>
+		</nav>
+		
+		
+		<div class="main-container">		
+			<div class="left-section">
+				<section id="kontakt">
+					<h2>Kontakt</h2>
+					<p>Skontaktuj się z nami, aby omówić swoje potrzeby oraz zapytać o wycenę.</p>
+					<p>Telefon: <span class="bold-text"> 733 800 190 </span></p>
+					<p>Email: Grekomeble.suwalki@gmail.com</p>
+					<p>16-402 Suwałki, Szpitalna 91 </p>
+				</section>
+			</div>
+			
+			<div class="right-section">
+				<div id="map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2338.1906466731198!2d22.912934077044252!3d54.123548716287885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e103870b922907%3A0xc2cc95deb6869ff3!2sGreko%20meble%20-%20zak%C5%82ad%20stolarski-%20Suwa%C5%82ki!5e0!3m2!1spl!2spl!4v1689080744971!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div><br>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div id="footer-container"></div>
+    <!-- Skrypt do załadowania stopki -->
+	<script>
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			// Pobierz zawartość header.html
+			fetch('header.html')
+			.then(response => response.text())
+			.then(headerHtml => {
+				// Wstaw zawartość header.html do elementu o id "header-container"
+				const headerContainer = document.querySelector('#header-container');
+				headerContainer.innerHTML = headerHtml;
+			});
+			
+			// Pobierz zawartość footer.html
+			fetch('footer.html')
+		.then(response => response.text())
+		.then(footerHtml => {
+		// Wstaw zawartość footer.html do elementu o id "footer-container"
+		const footerContainer = document.querySelector('#footer-container');
+		footerContainer.innerHTML = footerHtml;
+		});
+		});
+		
+		
+		
+		</script>	
+		
+		
+		</body>
+		</html>
+				

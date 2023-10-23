@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>GREKO MEBLE</title>
+		
+		<style>
+			/* Style CSS dla strony */
+			body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			}
+			
+			nav {
+			background-color: #333;
+			padding: 10px;
+			text-align: center;
+			margin-top: 65px;
+			}
+			
+			nav a {
+			color: #fff;
+			text-decoration: none;
+			margin: 0 10px;
+			transition: color 0.3s ease;
+			}
+			
+			nav a:hover {
+			color: #ff0000;
+			}
+			
+			/* Styl menu rozwijanego */
+			.dropdown {
+			position: relative;
+			display: inline-block;
+			}
+			
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: black;
+			min-width: 160px;
+			min-height: 40px;
+			z-index: 1;
+			}
+			
+			.dropdown-content a {  /* Wyśrodkowanie tekstu wewnątrz linków */
+  display: block;
+  text-align: center; 
+  padding: 10px 0; /* Dodatkowy padding dla równomiernego rozmieszczenia */
+  color: white;
+  text-decoration: none;
+}
+			.dropdown:hover .dropdown-content {
+			display: block;
+			}
+			
+			
+			.main-container { 
+			margin: 20px;
+			
+			margin-bottom:100px;
+			}
+			
+			
+			.gallery {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			}
+			
+			.gallery-item {
+			/*width: 200px;*/
+			margin: 10px;
+			/* filter: grayscale(100%);*/
+			/* transition: filter 0.3s ease;*/
+			}
+			
+			.gallery-item:hover {
+			/*filter: none;*/
+			}
+			
+			.gallery-item img {
+			width: 100%;
+			height: 150px;
+			cursor: pointer;
+			}
+			
+			/* Owerlay to podkladka pod zdjecia */
+			.overlay {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 600px;
+			max-width: 100%;
+			height: 800px;
+			max-height: 100%;
+			background-color: rgba(0, 0, 0, 0.8);
+			display: none;
+			justify-content: center;
+			align-items: center;
+			z-index: 999;
+			}
+			
+			.overlay.active {
+			display: flex;
+			}
+			
+			.overlay-content {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			}
+			
+			.overlay-content img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			}
+			
+			.close-btn {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 24px;
+			color: #fff;
+			cursor: pointer;
+			transition: color 0.3s ease;
+			}
+			
+			.close-btn:hover {
+			color: #ff0000;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="header-container"></div>
+		<nav>
+			<a href="index.html">Strona główna</a>
+			<a href="Galeria.html">Galeria</a>
+			<div class="dropdown">
+				<a href="#">Wzorniki</a>
+				<div class="dropdown-content">
+					<a href="Fronty.html">Fronty</a>
+					<a href="Plyty.html">Płyty</a>
+					<a href="Uchwyty.html">Uchwyty</a>
+				</div>
+			</div>			
+			<a href="Kontakt.html">Kontakt</a>
+		</nav>
+		
+		<div class="main-container">
+			<h2>Kuchnie</h2>
+			<div class="gallery">
+				<div class="gallery-item">
+					<img src="images\kuchnia_20220207_164150.jpg" alt="Zdjęcie 1"onclick="openImage('images/kuchnia_20220207_164150.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\kuchnia_20220207_164215.jpg" alt="Zdjęcie 2"onclick="openImage('images/kuchnia_20220207_164215.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\kuchnia_20220207_164326.jpg" alt="Zdjęcie 3"onclick="openImage('images/kuchnia_20220207_164326.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\kuchnia_20220728_123019.jpg" alt="Zdjęcie 4"onclick="openImage('images/kuchnia_20220728_123019.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\kuchnia_20220728_123026.jpg" alt="Zdjęcie 5"onclick="openImage('images/kuchnia_20220728_123026.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images/kuchnia_20220728_123030.jpg" alt="Zdjęcie 6"onclick="openImage('images/kuchnia_20220728_123030.jpg')">
+				</div>
+			</div>
+			
+			<h2>Lazienki</h2>
+			<div class="gallery">
+				<div class="gallery-item">
+					<img src="images\regal_20210311_123049.jpg" alt="Zdjęcie 1"onclick="openImage('images/regal_20210311_123049.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\siedzisko_20210611_143453.jpg" alt="Zdjęcie 2"onclick="openImage('images/siedzisko_20210611_143453.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\siedzisko_20220929_140133.jpg" alt="Zdjęcie 3"onclick="openImage('images/siedzisko_20220929_140133.43.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\szafki nocne_20230512_115043.jpg" alt="Zdjęcie 4"onclick="openImage('images/szafki nocne_20230512_115043.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\kaloryfer_20230303_140939.jpg" alt="Zdjęcie 5"onclick="openImage('images/kaloryfer_20230303_140939.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images/siedzisko_20200807_195945.jpg" alt="Zdjęcie 6"onclick="openImage('images/siedzisko_20200807_195945.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images/biuro_20210527_145253.jpg" alt="Zdjęcie 6"onclick="openImage('images/biuro_20210527_145253.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images/biuro_20210527_145254.jpg" alt="Zdjęcie 6"onclick="openImage('images/biuro_20210527_145254.jpg')">
+				</div>
+			</div>
+			
+			
+			<h2>Szafy</h2>
+			<div class="gallery">
+				<div class="gallery-item">
+					<img src="images\szafa_20210508_195703.jpg" alt="Zdjęcie 1"onclick="openImage('images/szafa_20210508_195703')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\szafa_20210611_142935.jpg" alt="Zdjęcie 2"onclick="openImage('images/szafa_20210611_142935.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\szafa_20210611_143046.jpg" alt="Zdjęcie 3"onclick="openImage('images/szafa_20210611_143046.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\szafa_20210611_142904.jpg" alt="Zdjęcie 3"onclick="openImage('images/szafa_20210611_142904.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\szafa_20210611_142919.jpg" alt="Zdjęcie 4"onclick="openImage('images/szafa_20210611_142919.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\szafa_20230512_114700.jpg" alt="Zdjęcie 5"onclick="openImage('images/szafa_20230512_114700.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images/szafa_20230512_114711.jpg" alt="Zdjęcie 6"onclick="openImage('images/szafa_20230512_114711.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images/szafa_20201215_165936.jpg" alt="Zdjęcie 6"onclick="openImage('images/szafa_20201215_165936.jpg')">
+				</div>
+				
+			</div>
+			
+			<h2>Lazienki</h2>
+			<div class="gallery">
+				<div class="gallery-item">
+					<img src="images\łazienka_20210513_185616.jpg" alt="Zdjęcie 1"onclick="openImage('images/łazienka_20210513_185616.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\łazienka_20211008_220621.jpg" alt="Zdjęcie 2"onclick="openImage('images/łazienka_20211008_220621.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\łazienka_20220804_134953.jpg" alt="Zdjęcie 3"onclick="openImage('images/łazienka_20220804_134953.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\łazienka_20220909_100353.jpg" alt="Zdjęcie 4"onclick="openImage('images/łazienka_20220909_100353.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images\łazienka_20230203_151403.jpg" alt="Zdjęcie 5"onclick="openImage('images/łazienka_20230203_151403.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images/łazienka_20230406_161008.jpg" alt="Zdjęcie 6"onclick="openImage('images/łazienka_20230406_161008.jpg')">
+				</div>
+				<div class="gallery-item">
+					<img src="images/łazienka_20230512_113526.jpg" alt="Zdjęcie 6"onclick="openImage('images/łazienka_20230512_113526.jpg')">
+				</div>
+			</div>
+			
+			
+			
+			<div class="overlay" onclick="closeImage()" id="overlay">
+				<div class="overlay-content">
+					<span class="close-btn" onclick="closeImage()">&times;</span>
+					<img src="" alt="" id="overlay-image">
+				</div>
+			</div>
+			
+		</div>
+		
+		<div id="footer-container"></div>
+		
+		<script>
+			const galleryItems = document.querySelectorAll('.gallery-item');
+			
+			galleryItems.forEach(item => {
+				item.addEventListener('mouseenter', () => {
+					// item.querySelector('img').style.filter = 'none';
+					item.style.transform = 'scale(1.2)';
+				});
+				
+				item.addEventListener('mouseleave', () => {
+					// item.querySelector('img').style.filter = 'grayscale(100%)';
+					item.style.transform = 'scale(1)';
+				});
+			});
+			
+			// /-----------------otwieranie-----------------------------
+			function openImage(src) {
+				const overlay = document.getElementById('overlay');
+				const overlayImage = document.getElementById('overlay-image');
+				
+				overlayImage.src = src;
+				overlay.classList.add('active');
+			}
+			
+			function closeImage() {
+				const overlay = document.getElementById('overlay');
+				
+				overlay.classList.remove('active');
+			}
+			
+			
+			document.addEventListener("DOMContentLoaded", function() {
+				// Pobierz zawartość header.html
+				fetch('header.html')
+				.then(response => response.text())
+				.then(headerHtml => {
+					// Wstaw zawartość header.html do elementu o id "header-container"
+					const headerContainer = document.querySelector('#header-container');
+					headerContainer.innerHTML = headerHtml;
+				});
+				
+				// Pobierz zawartość footer.html
+				fetch('footer.html')
+				.then(response => response.text())
+				.then(footerHtml => {
+					// Wstaw zawartość footer.html do elementu o id "footer-container"
+					const footerContainer = document.querySelector('#footer-container');
+					footerContainer.innerHTML = footerHtml;
+				});
+			});
+		</script>
+	</body>
+</html>

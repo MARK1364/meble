@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GREKO MEBLE</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+		
+		
+		<style>
+			/* Style CSS dla strony */
+			body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			}
+			
+			nav {
+			background-color: #333;
+			padding: 10px;
+			text-align: center;
+			margin-top: 65px;
+			}
+			
+			nav a {
+			color: #fff;
+			text-decoration: none;
+			margin: 0 10px;
+			transition: color 0.3s ease;
+			}
+			
+			nav a:hover {
+			color: #ff0000;
+			}
+			
+			/* Styl menu rozwijanego */
+			.dropdown {
+			position: relative;
+			display: inline-block;
+			}
+			
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: black;
+			min-width: 160px;
+			min-height: 40px;
+			z-index: 1;
+			}
+			
+			.dropdown-content a {  /* Wyśrodkowanie tekstu wewnątrz linków */
+			display: block;
+			text-align: center; 
+			padding: 10px 0; /* Dodatkowy padding dla równomiernego rozmieszczenia */
+			color: white;
+			text-decoration: none;
+			}
+			.dropdown:hover .dropdown-content {
+			display: block;
+			}
+			
+			.main_conteiner {
+            display: flex;
+            flex-wrap: wrap;
+			flex-direction: row;	
+            justify-content: flex-start;
+           
+			margin: 20px;
+			}
+			
+			.thumbnail {
+			
+            margin: 10px;
+            cursor: pointer;
+			display: block;
+			float:left;
+			}
+			
+			/* Styl dla obrazka wewnątrz figcaption */
+			figcaption {
+			width: 75px;
+			}
+			
+			.lightbox {
+            display: flex;
+            position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-content: center;
+			
+			
+			}
+			.lightbox.active {
+            display: block; /* Pokaż lightbox, gdy jest aktywny */
+			}
+			
+			.lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+			
+			}
+			
+			.close-button {
+			position: absolute;
+			top: 20px;
+			right: 25px;
+			color: white;
+			font-size: 50px;
+			cursor: pointer;
+			
+			}
+			
+			
+			.prev, .next {
+            position: absolute;
+            top: 50%;
+            font-size: 50px;
+            cursor: pointer;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border: none;
+            transform: translateY(-50%);
+			}
+			
+			.prev {
+            left: 15px;
+			}
+			
+			.next {
+            right: 15px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+		<!-- header importowany-->
+		<div id="header-container"></div>
+		
+		<nav>
+			<a href="index.html">Strona główna</a>
+			<a href="Galeria.html">Galeria</a>		
+			<div class="dropdown">
+				<a href="#">Wzorniki</a>
+				<div class="dropdown-content">
+					<a href="Fronty.html">Fronty</a>
+					<a href="Plyty.html">Płyty</a>
+					<a href="Uchwyty.html">Uchwyty</a>
+				</div>
+			</div>			
+			<a href="Kontakt.html">Kontakt</a>
+		</nav>
+		
+		<!-- zawartosc strony-->
+		<div class="main_conteiner">
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/da9051951d1d028a40b2e72ac8ee95f189765510/H1180_ST37_Dab_Halifax_naturalny.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H1180_ST37_Dab_Halifax_naturalny.jpg')">
+				<figcaption class="name_egger">Dąb Halifax naturalny</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/H1181_ST37_Dab_Halifax_tabak.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H1181_ST37_Dab_Halifax_tabak.jpg')">
+				<figcaption class="name_egger">Dąb Halifax tabak</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/H1344_ST32_Dab_Sherman_koniakowy.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H1344_ST32_Dab_Sherman_koniakowy.jpg')">
+				<figcaption class="name_egger">Dąb Sherman koniakowy</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/H1701_ST33_Wiaz_Tossini_biay.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H1701_ST33_Wiaz_Tossini_bialy.jpg')">
+				<figcaption class="name_egger">Wiąz Tossini biały</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/H2032_ST10_Dab_Hunton_jasny.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H2032_ST10_Dab_Hunton_jasny.jpg')">
+				<figcaption class="name_egger">Dąb Hunton jasny</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/H2033_ST10_Dab_Hunton_ciemny.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/c2592a570159981b532f65aaede56d6168aa17aa/Tekstury2800X2100/H2033_ST10_Dab_Hunton_ciemny.jpg')">
+				<figcaption class="name_egger">Dąb Hunton ciemny</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/H3133_ST12_Dab_Davos_truflowy.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H3133_ST12_Dab_Davos_truflowy.jpg')">
+				<figcaption class="name_egger">Dąb Davos truflowy</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/H3178_ST37_Dab_Halifax_czarny.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H3178_ST37_Dab_Halifax_czarny.jpg')">
+				<figcaption class="name_egger">Dąb Halifax czarny</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/H3335_ST28_Dab_Gladstone_biay.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H3335_ST28_Dab_Gladstone_bialy.jpg')">
+				<figcaption class="name_egger">Dąb Gladstone biały</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/H3398_ST9_D%C4%85b_Kendal_koniakowy.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/Tekstury2800X2100/H3398_ST9_Dab_Kendal_koniakowy.jpg')">
+				<figcaption class="name_egger">Dąb Kendal koniakowy</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/H3403_ST38_Modrzew_gorski_biay.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H3403_ST38_Modrzew_gorski_bialy.jpg')">
+				<figcaption class="name_egger">Modrzew górski biały</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/H3470_ST22_Sosna_naturalna.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H3470_ST22_Sosna_naturalna.jpg')">
+				<figcaption class="name_egger">Sosna naturalna</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/H3700_10_Orzech_Pacyfik_naturalny.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H3700_10_Orzech_Pacyfik_naturalny.jpg')">
+				<figcaption class="name_egger">Orzech Pacyfik naturalny</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/U113_ST9_Bawelna.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/U113_ST9_Bawelna.jpg')">
+				<figcaption class="name_egger">Bawełna</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/U156_ST9_Bez_piaskowy.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/U156_ST9_Bez_piaskowy.jpg')">
+				<figcaption class="name_egger">Beż piaskowy</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/U626_ST9_Zielen_kiwi.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/U626_ST9_Zielen_kiwi.jpg')">
+				<figcaption class="name_egger">Zieleń kiwi</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/db6129896019cee5146d0ef476ffff3611ad1b1c/U702_PT_Kaszmir.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/db6129896019cee5146d0ef476ffff3611ad1b1c/Tekstury2800X2100/U702_PT_Kaszmir.jpg')">
+				<figcaption class="name_egger">Kaszmir</figcaption>
+			</div>
+			
+			<div class="thumbnail">
+				<img src="https://raw.githubusercontent.com/MARK1364/Tekstury/d53932925d6864bbd7ead680015e7df488c526a6/U708_PT_Szary_jasny.png" onclick="openLightbox('https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/U708_PT_Szary_jasny.jpg')">
+				<figcaption class="name_egger">Szary jasny</figcaption>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</div>
+		
+		<div class="lightbox" id="lightbox">
+			<span class="close-button" onclick="closeLightbox()">&times;</span>
+			<img id="lightbox-image">
+			<button class="prev" onclick="changeImage(-1)">&#8249;</button>
+			<button class="next" onclick="changeImage(1)">&#8250;</button>
+		</div>
+		
+		<!-- stopka importowana-->
+		<div id="footer-container"></div>
+		
+		
+		
+		<script>
+			let currentImageIndex = 0;
+			const images = [
+			'https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H1180_ST37_Dab_Halifax_naturalny.jpg',
+			'https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H1181_ST37_Dab_Halifax_tabak.jpg',
+			'https://raw.githubusercontent.com/MARK1364/Tekstury/0e678b3a37bb2e4f9944d2b8a1783ba81f533c59/Tekstury2800X2100/H1344_ST32_Dab_Sherman_koniakowy.jpg'
+			];
+			
+			// Ukrywamy galerię na początku
+			document.getElementById('lightbox').style.display = 'none';
+			
+			function openLightbox(imageUrl) {
+				currentImageIndex = images.indexOf(imageUrl);
+				const lightbox = document.getElementById('lightbox');
+				const lightboxImage = document.getElementById('lightbox-image');
+				
+				lightboxImage.src = imageUrl;
+				lightbox.style.display = 'flex';
+				lightbox.style.zIndex = 2200;	
+			}
+			
+			function closeLightbox() {
+				const lightbox = document.getElementById('lightbox');
+				lightbox.style.display = 'none';
+				
+			}
+			
+			function changeImage(step) {
+				currentImageIndex += step;
+				if (currentImageIndex < 0) {
+					currentImageIndex = images.length - 1;
+					} else if (currentImageIndex >= images.length) {
+					currentImageIndex = 0;
+				}
+				const lightboxImage = document.getElementById('lightbox-image');
+				lightboxImage.src = images[currentImageIndex];
+			}
+			
+			// Pobierz zawartość header.html
+			document.addEventListener("DOMContentLoaded", function() {
+				
+				fetch('header.html')
+				.then(response => response.text())
+				.then(headerHtml => {
+					// Wstaw zawartość header.html do elementu o id "header-container"
+					const headerContainer = document.querySelector('#header-container');
+					headerContainer.innerHTML = headerHtml;
+				});
+				
+				// Pobierz zawartość footer.html
+				fetch('footer.html')
+				.then(response => response.text())
+				.then(footerHtml => {
+					// Wstaw zawartość footer.html do elementu o id "footer-container"
+					const footerContainer = document.querySelector('#footer-container');
+					footerContainer.innerHTML = footerHtml;
+				});
+			});
+			
+			
+			
+			//--------- Inicjalizacja Hammer.js na elemencie karuzeli------------------------------------------
+			const mc = new Hammer(carousel);
+			
+			mc.on('swipeleft', function () {
+				nextImage();
+			});
+			
+			mc.on('swiperight', function () {
+				prevImage();
+			});
+			//+++++++++++++ Hammer.js na elemencie karuzeli+++++++++++++++++++++
+		</script>
+	</body>
+</html>
+
